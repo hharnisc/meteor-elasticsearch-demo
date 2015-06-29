@@ -1,0 +1,22 @@
+<template name="tweetSearch">
+    <input type="text" placeholder="Search Tweets..." id="tweet-search">
+    {{#each tweets}}
+        <div class="tweet">
+            <h4 class="top">User</h4>
+            <div>
+                <div>User: {{username}} (ID: {{userId}})</div>
+                <div>Location: {{userLocation}} </div>
+                <div>Bio: {{userBio}}</div>
+            </div>
+            <h4>Tweet</h4>
+            <div>
+                <div>{{text}}</div>
+                <div>Created: {{formatedCreatedDate}}</div>
+            </div>
+            <h4>Mentions</h4>
+            {{#each mentions}}
+                <div>User: {{username}} (ID: {{userId}})</div>
+            {{/each}}
+        </div>
+    {{/each}}
+</template>
